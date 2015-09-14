@@ -33,16 +33,16 @@ class PeoplenetSpider(scrapy.Spider):
     Get the query url
     '''
     def get_query_url(self, search_date):
-        return 'http://news.people.com.cn/210801/211150/index.js'
-        #return 'http://news.people.com.cn/210801/211150/index.js?_=1441184732901'
+        #return 'http://news.people.com.cn/210801/211150/index.js'
+        return 'http://news.people.com.cn/210801/211150/index.js?_=1441872462376'
 
 
     def parse(self, response):
 
         try:
             #Get news.people.com.cn's data
-            response = urllib2.urlopen(r'http://news.people.com.cn/210801/211150/index.js')
-            #response = urllib2.urlopen(r'http://news.people.com.cn/210801/211150/index.js?_=1441184732901')
+            #response = urllib2.urlopen(r'http://news.people.com.cn/210801/211150/index.js')
+            response = urllib2.urlopen(r'http://news.people.com.cn/210801/211150/index.js?_=1441872462376')
             html_utf = response.read()
             #print html_utf
 
