@@ -97,6 +97,7 @@ class PeoplenetSpider(scrapy.Spider):
                 str_2 = str_1 + '/@href'
                 next_url_0 = response.xpath(str_2).extract()
                 pos = this_page.find("/n/")
+                next_url = this_page[:pos]+str(next_url_0[0])
                 req = scrapy.Request(next_url, callback = self.parse_next_page, dont_filter = self.dont_filter)
                 req.meta['article'] = article
                 req.meta['contents'] = content_2
